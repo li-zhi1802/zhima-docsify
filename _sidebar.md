@@ -1,3 +1,7 @@
-
-* [如何使用docsify搭建一个博客](/docs/Guide.md)
-
+* [奇淫异技](/docs/tips/README)
+  * [如何使用docsify搭建一个博客](/docs/tips/guide)
+* [数组问题](/docs/array/README)
+  * [双指针](/docs/array/双指针问题)
+  * [前缀和](/docs/array/前缀和)
+* 小题一刷(/docs/leetcode/README)
+  * [【1-Easy】两数之和](/docs/leetcode/【1-Easy】两数之和)

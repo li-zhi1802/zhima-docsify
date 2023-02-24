@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>芝麻的博客</title>
+    <title>芝麻芝麻</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description" />
     <meta
@@ -15,31 +15,36 @@
     />
   </head>
   <body>
-    <div id="app"></div>
-    <script>
-      window.$docsify = {
-        name: "芝麻芝麻",
-        repo: "https://github.com/li-zhi1802/zhima-docsify",
-        //最大支持渲染的标题层级
-        maxLevel: 5,
-        subMaxLevel: 3,
-        homepage: "README.md",
-        coverpage: true,
-        loadSidebar: true,
-        //切换页面后是否自动跳转到页面顶部
-        auto2top: true,
-        search: {
-          maxAge: 24 * 60 * 60,
-        },
-        // plugins: [
-        //   EditOnGithubPlugin.create(
-        //     "https://github.com/li-zhi1802/zhima-docsify/blob/master/"
-        //   ),
-        // ],
-      };
+  <div id="app"></div>
+  <!-- docsify-edit-on-github -->
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    window.$docsify = {
+      name: "芝麻芝麻",
+      repo: "https://github.com/li-zhi1802/zhima-docsify",
+      //最大支持渲染的标题层级
+      maxLevel: 5,
+      subMaxLevel: 3,
+      homepage: "README.md",
+      coverpage: true,
+      loadSidebar: true,
+      //切换页面后是否自动跳转到页面顶部
+      auto2top: true,
+      search: {
+        maxAge: 24 * 60 * 60,
+        paths: 'auto',
+        placeholder: '搜索关键词',
+        noData: '找不到结果',
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3,
+      },
+      plugins: [
+        EditOnGithubPlugin.create(
+                "https://github.com/li-zhi1802/zhima-docsify/blob/master/"
+        ),
+      ],
+    };
     </script>
-    <!-- docsify-edit-on-github -->
-    <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <!--Java代码高亮-->
