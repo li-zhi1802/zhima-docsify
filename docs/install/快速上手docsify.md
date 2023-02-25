@@ -17,7 +17,7 @@ docsify init .
 
 目录格式如下
 
-![image-20230223221635579](guide/image-20230223221635579.png)
+![image-20230223221635579](快速上手docsify/image-20230223221635579.png)
 
 ### 查看效果
 
@@ -25,7 +25,7 @@ docsify init .
 docsify serve
 ```
 
-![image-20230224080443300](guide/image-20230224080443300.png)
+![image-20230224080443300](快速上手docsify/image-20230224080443300.png)
 
 当然，你现在应该没有这个中间的图片和文字
 
