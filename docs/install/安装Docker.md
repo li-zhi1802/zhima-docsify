@@ -65,7 +65,11 @@ docker version
 
 ### 配置镜像
 
+
+
 ```json
+mkdir /etc/docker/
+vim daemon.conf
 {
         "registry-mirrors": [ "https://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com","https://k4lo9gcp.mirror.aliyuncs.com" ],
         "max-concurrent-downloads": 20,
