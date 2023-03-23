@@ -22,4 +22,5 @@
 * [蓝桥杯试题](/docs/lanqiao/README)
   * [第十三届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第十三届蓝桥杯大赛软件赛省赛_Java_B组)
   * [第十一届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第十一届蓝桥杯大赛软件赛省赛_Java_B组)
+  * [第十二届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第十二届蓝桥杯大赛软件赛省赛_Java_B组)
   * [C大学A组67149](/docs/lanqiao/C大学A组67149)
