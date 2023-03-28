@@ -258,7 +258,123 @@ public class QuestionE {
 
 ![试题E](第十二届蓝桥杯大赛软件赛省赛_Java_B组/image-20230322224456136.png)
 
-这里暂时留个坑🕳，后面填
+#### 分析
+
+使用Dijkstra单源最短路径算法即可
+
+#### 参考答案
+
+```java
+public class QuestionE {
+    public static void main(String[] args) {
+        int nodeSum = 2021;
+        System.out.println(minDistance(nodeSum, 1, nodeSum));
+    }
+
+    private static long minDistance(int nodeSum, int start, int end) {
+        // 0->from,1->to,2->weight
+        List<int[]>[] graph = buildGraph(nodeSum);
+        // 使用Dijkstra算法
+        // 按照距离升序排序
+        PriorityQueue<State> pq = new PriorityQueue<>(Comparator.comparingLong(a -> a.distanceFromStart));
+        // distanceTo[i]是从起点到i的最小距离
+        long[] distanceTo = new long[nodeSum + 1];
+        Arrays.fill(distanceTo, Long.MAX_VALUE);
+        // 起点到起点的距离是0
+        distanceTo[start] = 0;
+        // 将状态放入优先级队列中
+        pq.offer(new State(start, 0));
+        while (!pq.isEmpty()) {
+            State currState = pq.poll();
+            int currentNodeId = currState.id;
+            long currentNodeDistanceFromStart = currState.distanceFromStart;
+            // 到了
+            if (currentNodeId == end) {
+                return currentNodeDistanceFromStart;
+            }
+            // 如果 从起点到当前节点的距离 比 全局的从起点到当前节点的距离大，直接跳过本次循环
+            if (currentNodeDistanceFromStart > distanceTo[currentNodeId]) {
+                continue;
+            }
+            for (int[] neighborEdge : graph[currentNodeId]) {
+                int nextNodeId = neighborEdge[1];
+                int distanceToNextNode = neighborEdge[2];
+                if (distanceToNextNode + currentNodeDistanceFromStart > distanceTo[nextNodeId]) {
+                    continue;
+                }
+                distanceTo[nextNodeId] = distanceToNextNode + currentNodeDistanceFromStart;
+                pq.offer(new State(nextNodeId, distanceToNextNode + currentNodeDistanceFromStart));
+            }
+        }
+        // 不可达
+        return Long.MAX_VALUE;
+    }
+
+    private static List<int[]>[] buildGraph(int end) {
+        List<int[]>[] graph = new LinkedList[end + 1];
+        for (int i = 0; i < graph.length; i++) {
+            graph[i] = new LinkedList<>();
+        }
+        for (int i = 1; i <= end; i++) {
+            for (int j = 1; j <= 21 && i + j <= end; j++) {
+                int lcm = lcm(i, i + j);
+                graph[i].add(new int[]{i, i + j, lcm});
+                graph[i + j].add(new int[]{i + j, i, lcm});
+            }
+        }
+        return graph;
+    }
+
+    /**
+     * 最大公约数(Greast common divisor)
+     *
+     * @param m
+     * @param n
+     * @return
+     */
+    private static int gcd(int m, int n) {
+        int x = m;
+        int y = n;
+        m = Math.max(x, y);
+        n = Math.min(x, y);
+        while (m % n != 0) {
+            int temp = m % n;
+            m = n;
+            n = temp;
+        }
+        return n;
+    }
+
+    /**
+     * 最小公倍数(Least common multiple)
+     *
+     * @param m
+     * @param n
+     * @return
+     */
+    private static int lcm(int m, int n) {
+        return (m * n) / gcd(m, n);
+    }
+
+    static class State {
+        private int id;
+        private long distanceFromStart;
+
+        public State(int id, long distanceFromStart) {
+            this.id = id;
+            this.distanceFromStart = distanceFromStart;
+        }
+
+        @Override
+        public String toString() {
+            return "State{" +
+                    "id=" + id +
+                    ", distanceFromStart=" + distanceFromStart +
+                    '}';
+        }
+    }
+}
+```
 
 ### 试题F：时间显示
 
