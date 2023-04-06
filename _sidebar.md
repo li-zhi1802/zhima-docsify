@@ -20,6 +20,7 @@
   * [如何使用docsify搭建一个博客](/docs/install/快速上手docsify)
   * [安装Docker](/docs/install/安装Docker)
 * [蓝桥杯试题](/docs/lanqiao/README)
+  * [第八届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第八届蓝桥杯大赛软件赛省赛_Java_B组)
   * [第九届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第九届蓝桥杯大赛软件赛省赛_Java_B组)
   * [第十届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第十届蓝桥杯大赛软件赛省赛_Java_B组)
   * [第十一届蓝桥杯大赛软件赛省赛_Java_B组](/docs/lanqiao/第十一届蓝桥杯大赛软件赛省赛_Java_B组)
